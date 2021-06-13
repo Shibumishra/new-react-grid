@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "../../Sec-pract/pract-app/node_modules/axios";
+import moment from "moment";
 
 const Filter = () => {
   const [data, setdata] = useState([]);
@@ -84,9 +85,8 @@ const Filter = () => {
                         alt="apps"
                       />
                       <p className="title1">{title}</p>
-                      <p className="authorname">
-                        {authorname} |
-                      </p>
+                      <span className="authorname"> {authorname} <span style={{color: "black"}}>|</span> <span className="time_day_month">{moment.utc(posted_on).format("DD MMM YYYY") }</span>
+                      </span>
                       <p class="description">{description}</p>
                     </a>
                   </div>
